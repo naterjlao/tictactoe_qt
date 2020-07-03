@@ -6,4 +6,7 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES +=  tst_logictest.cpp
+SOURCES += \
+    ../tictactoe/board.cpp \
+    tst_logictest.cpp
+
