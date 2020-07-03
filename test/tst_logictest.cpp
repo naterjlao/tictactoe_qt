@@ -34,7 +34,7 @@ logicTest::~logicTest()
 
 void logicTest::initTestCase()
 {
-    this->b = new Board;
+    this->b = new Board(Entry::EMPTY);
 }
 
 void logicTest::cleanupTestCase()

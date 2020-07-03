@@ -30,11 +30,11 @@ enum class Entry {EMPTY, X, O};
  * @brief Returns a string representation of the #Entry object.
  * @param entry an #Entry object.
  * @return the string "NA" if a non valid Entry index is given. Otherwise:
- * entry       |return
- * ------------|------
- * Entry::EMPTY|" "
- * Entry::X    |"X"
- * Entry::O    |"O"
+ * entry        | return
+ * ------------ | ------
+ * Entry::EMPTY | " "
+ * Entry::X     | "X"
+ * Entry::O     | "O"
  */
 std::string entryToString(Entry entry);
 
@@ -76,9 +76,11 @@ public:
 
     /**
      * @brief Determines the status of #Board.
-     * @return either Entry::X or Entry::O if the #Board is at an end state.
-     * @return Entry::EMPTY if the #Board is still ongoing.
+     * @return either Entry::X or Entry::O if the #Board is at an winning end state.
+     * @return Entry::EMPTY if the #Board is ongoing.
+     * @return (#Entry) -1 if the #Board is at a stalemate.
      * @see Entry
+     * @todo not implemented
      */
     Entry getStatus();
 
@@ -87,6 +89,19 @@ public:
      * @return either Entry::X or Entry::O representing the player who has the current turn.
      */
     Entry getTurn();
+
+    /**
+     * @brief Returns the #Entry object that represents the next turn of the game state.
+     * @return either Entry::X or Entry::O representing the player who has the current turn.
+     * @return (#Entry) -1 if no next player can make a turn.
+     */
+    Entry getNextTurn();
+
+
+    /**
+     * @brief Updates the current player to the next player.
+     */
+    void updateTurn();
 
     /**
      * @brief Returns a graphical string representation of the #Board.

@@ -2,3 +2,6 @@
 *.out
 html/
 *.user
+*.TMP
+*.tmp
+*.temp
