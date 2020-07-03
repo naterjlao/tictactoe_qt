@@ -80,7 +80,6 @@ public:
      * @return Entry::EMPTY if the #Board is ongoing.
      * @return (#Entry) -1 if the #Board is at a stalemate.
      * @see Entry
-     * @todo not implemented
      */
     Entry getStatus();
 
@@ -96,7 +95,6 @@ public:
      * @return (#Entry) -1 if no next player can make a turn.
      */
     Entry getNextTurn();
-
 
     /**
      * @brief Updates the current player to the next player.

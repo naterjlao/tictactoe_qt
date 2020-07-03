@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+/** @file mainwindow.h */
+
 #include <QMainWindow>
 #include <QPushButton>
 
@@ -33,10 +35,32 @@ private:
     Ui::MainWindow *ui;
     Board *board;
     QPushButton *buttons[NUM_POS];
+
+    /**
+     * @brief Handles button clicks at a position on the board.
+     * @param pos
+     */
     void buttonClicked(size_t pos);
+
+    /**
+     * @brief Updates the board position text.
+     */
     void updateButtons();
+
+    /**
+     * @brief Disables all board position buttons.
+     */
     void disableButtons();
+
+    /**
+     * @brief Updates the status label based on specific gameboard elements.
+     */
     void updateStatus();
+
+    /**
+     * @brief Sets a buttons display font.
+     * @param pos
+     */
     void setButtonStyle(size_t pos);
 };
 #endif // MAINWINDOW_H

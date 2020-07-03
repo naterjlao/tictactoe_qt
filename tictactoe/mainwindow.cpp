@@ -48,13 +48,14 @@ void MainWindow::on_pos8_clicked() { this->buttonClicked(8); }
 void MainWindow::buttonClicked(size_t pos)
 {
     Entry current_turn = this->board->getTurn();
-    if (this->board->getEntry(pos) != current_turn)
+    if (this->board->getEntry(pos) != current_turn && this->board->getEntry(pos) == Entry::EMPTY)
     {
         this->board->setEntry(current_turn,pos);
+        this->updateButtons();
+        this->board->updateTurn();
+        this->updateStatus();
     }
-    this->updateButtons();
-    this->updateStatus();
-    this->board->updateTurn();
+
 }
 
 void MainWindow::updateButtons()
@@ -83,7 +84,7 @@ void MainWindow::updateStatus()
         break;
     case Entry::EMPTY:
         status += "It is ";
-        status += QString::fromStdString(entryToString(this->board->getNextTurn()));
+        status += QString::fromStdString(entryToString(this->board->getTurn()));
         status += "'s turn";
         break;
     default:
