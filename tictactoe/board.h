@@ -1,7 +1,7 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-/** @file #Board.h */
+/** @file board.h */
 
 // NOTE to self: the above line is needed for documentation for enums and static vars.
 // NOTE to self: remember to set EXTRACT_ALL and EXTRACT_STATIC to yes in doxygen config
