@@ -20,6 +20,8 @@ public:
     MainWindow(QWidget *parent = nullptr, Board *board = nullptr);
     ~MainWindow();
 
+    /** @todo on_pos*_clicked functions are lazy, prob want to push these to an array */
+
 private slots:
     void on_pos0_clicked();
     void on_pos1_clicked();
@@ -38,12 +40,12 @@ private:
 
     /**
      * @brief Handles button clicks at a position on the board.
-     * @param pos
+     * @param pos position index, see #entryToString
      */
     void buttonClicked(size_t pos);
 
     /**
-     * @brief Updates the board position text.
+     * @brief Updates the board position text for all positional buttons.
      */
     void updateButtons();
 
@@ -58,7 +60,7 @@ private:
     void updateStatus();
 
     /**
-     * @brief Sets a buttons display font.
+     * @brief Sets a buttons display font style and size.
      * @param pos
      */
     void setButtonStyle(size_t pos);
